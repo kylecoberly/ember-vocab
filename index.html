@@ -367,7 +367,7 @@ postSnapshot.attr(<span class="pl-s"><span class="pl-pds">'</span>title<span cla
 <h3>
 <a id="initializer" class="anchor" href="#initializer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Initializer</h3>
 
-<p>Function that runs when the application starts</p>
+<p>Function that runs when the application starts, before the first route is loaded.</p>
 
 <div class="highlight highlight-js"><pre><span class="pl-c">// app/initializers/observation.js</span>
 <span class="pl-k">export</span> <span class="pl-k">default</span> {
@@ -416,7 +416,7 @@ postSnapshot.attr(<span class="pl-s"><span class="pl-pds">'</span>title<span cla
 <h3>
 <a id="integration-test" class="anchor" href="#integration-test" aria-hidden="true"><span class="octicon octicon-link"></span></a>Integration Test</h3>
 
-<p>Tests application logic. Requires the application to be running.</p>
+<p>Tests component logic. Doesn't need the application, but needs the DOM.</p>
 
 <h3>
 <a id="acceptance-test" class="anchor" href="#acceptance-test" aria-hidden="true"><span class="octicon octicon-link"></span></a>Acceptance Test</h3>
