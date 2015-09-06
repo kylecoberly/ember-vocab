@@ -189,18 +189,21 @@
 <h3>
 <a id="observer" class="anchor" href="#observer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Observer</h3>
 
-<p>Triggers a function when a primitive property changes.</p>
+<p>Immediately triggers a side-effecting function, when a primitive property changes.</p>
 
 <div class="highlight highlight-js"><pre>Ember.<span class="pl-c1">Object</span>.extend({
-  valueObserver<span class="pl-k">:</span> Ember.observer(<span class="pl-s"><span class="pl-pds">'</span>value<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
-    <span class="pl-c">// Executes whenever the "value" property changes</span>
+  onIsFormValidChanged<span class="pl-k">:</span> Ember.observer(<span class="pl-s"><span class="pl-pds">'</span>isFormValid<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+    <span class="pl-c">// Executes whenever the "isFormValid" property changes</span>
+    if (!this.get('isFormValid')) {
+      document.getElementById('form-errors').scrollIntoView();
+    }
   })
 });</pre></div>
 
 <h3>
 <a id="computed-property" class="anchor" href="#computed-property" aria-hidden="true"><span class="octicon octicon-link"></span></a>Computed Property</h3>
 
-<p>Property that recalculates whenever other properties change.</p>
+<p>Property that lazily recalculates whenever other properties change.</p>
 
 <div class="highlight highlight-js"><pre>Ember.Component.extend({
   firstName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Kyle<span class="pl-pds">"</span></span>,
