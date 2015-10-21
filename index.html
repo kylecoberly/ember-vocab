@@ -36,7 +36,7 @@
 
 <p>The JavaScript application framework.</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.Component.extend({
+<div class="highlight highlight-source-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.Component.extend({
   classNameBindings<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>isUrgent<span class="pl-pds">'</span></span>],
   isUrgent<span class="pl-k">:</span> <span class="pl-c1">true</span>
 });</pre></div>
@@ -46,7 +46,7 @@
 
 <p>Ember's official data modeling solution</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> <span class="pl-c1">DS</span>.Model.extend({
+<div class="highlight highlight-source-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> <span class="pl-c1">DS</span>.Model.extend({
   firstName<span class="pl-k">:</span> <span class="pl-c1">DS</span>.attr(),
   lastName<span class="pl-k">:</span> <span class="pl-c1">DS</span>.attr(),
   birthday<span class="pl-k">:</span> <span class="pl-c1">DS</span>.attr()
@@ -70,7 +70,7 @@
 
 <p>Maps URLs to routes</p>
 
-<div class="highlight highlight-js"><pre>Router.map(<span class="pl-k">function</span>() {
+<div class="highlight highlight-source-js"><pre>Router.map(<span class="pl-k">function</span>() {
   <span class="pl-v">this</span>.route(<span class="pl-s"><span class="pl-pds">'</span>about<span class="pl-pds">'</span></span>, { path<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>/about<span class="pl-pds">'</span></span> });
   <span class="pl-v">this</span>.route(<span class="pl-s"><span class="pl-pds">'</span>favorites<span class="pl-pds">'</span></span>, { path<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>/favs<span class="pl-pds">'</span></span> });
 });</pre></div>
@@ -80,7 +80,7 @@
 
 <p>Sets data on a controller, renders templates, redirects requests, handles/bubbles actions</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.Route.extend({
+<div class="highlight highlight-source-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.Route.extend({
   <span class="pl-en">model</span><span class="pl-k">:</span> <span class="pl-k">function</span>(){
     <span class="pl-k">return</span> <span class="pl-v">this</span>.store.findRecord(<span class="pl-s"><span class="pl-pds">"</span>author<span class="pl-pds">"</span></span>, <span class="pl-c1">1</span>);
   },
@@ -96,7 +96,7 @@
 
 <p>Binds data to templates, holds temporary data, receives/bubbles actions</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.Controller.extend({
+<div class="highlight highlight-source-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.Controller.extend({
   sortedData<span class="pl-k">:</span> [<span class="pl-c1">1</span>,<span class="pl-c1">2</span>,<span class="pl-c1">3</span>],
   actions<span class="pl-k">:</span> {
     <span class="pl-en">upvote</span><span class="pl-k">:</span> <span class="pl-k">function</span>(){
@@ -110,7 +110,7 @@
 
 <p>A "routeless controller". A singleton that represents application-wide state. Can be injected into other Ember objects.</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.Service.extend({
+<div class="highlight highlight-source-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.Service.extend({
   currentSong<span class="pl-k">:</span> Ember.computed(<span class="pl-k">function</span>(){
     <span class="pl-k">return</span> {
       title<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>It's My Job To Keep Punk Rock Elite<span class="pl-pds">"</span></span>,
@@ -124,14 +124,14 @@
 
 <p>HTML that can use bound variables, apply simple logic, and send actions</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-k">&lt;</span>p<span class="pl-k">&gt;</span>Currently listening to {{currentSong.artist}}<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>{{currentSong.title}}<span class="pl-pds">"</span></span><span class="pl-k">&lt;/</span>p<span class="pl-k">&gt;</span></pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>p<span class="pl-k">&gt;</span>Currently listening to {{currentSong.artist}}<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>{{currentSong.title}}<span class="pl-pds">"</span></span><span class="pl-k">&lt;/</span>p<span class="pl-k">&gt;</span></pre></div>
 
 <h3>
 <a id="actions" class="anchor" href="#actions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Actions</h3>
 
 <p>A response to a user interaction. Looks to controller for handler. Will bubble through the route hierarchy until it finds a handler.</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.Controller.extend({
+<div class="highlight highlight-source-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.Controller.extend({
   <span class="pl-en">setCityDropdown</span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">state</span>){
     <span class="pl-c">// Set a list of cities</span>
   },
@@ -147,7 +147,7 @@
 
 <p>The object that backs a template, determines its parent tag, and responds to DOM events. Removed in 2.0.</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.View.extend({
+<div class="highlight highlight-source-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.View.extend({
   <span class="pl-en">click</span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">event</span>){
     <span class="pl-c">// Handle clicks</span>
   },
@@ -161,7 +161,7 @@
 
 <p>A view combined with a controller. Renders templates directly. Instantiated in a template, and can send actions out.</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.Component.extend({
+<div class="highlight highlight-source-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.Component.extend({
   tagName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>nav<span class="pl-pds">"</span></span>,
   <span class="pl-en">click</span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">event</span>){
     <span class="pl-c">// Handle click event</span>
@@ -178,9 +178,9 @@
 
 <p>A collection of properties and methods that you can add to an Ember object.</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.Mixin.create({
+<div class="highlight highlight-source-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.Mixin.create({
   <span class="pl-en">edit</span><span class="pl-k">:</span> <span class="pl-k">function</span>() {
-    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>starting to edit<span class="pl-pds">'</span></span>);
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>starting to edit<span class="pl-pds">'</span></span>);
     <span class="pl-v">this</span>.set(<span class="pl-s"><span class="pl-pds">'</span>isEditing<span class="pl-pds">'</span></span>, <span class="pl-c1">true</span>);
   },
   isEditing<span class="pl-k">:</span> <span class="pl-c1">false</span>
@@ -189,20 +189,23 @@
 <h3>
 <a id="observer" class="anchor" href="#observer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Observer</h3>
 
-<p>Triggers a function when a primitive property changes.</p>
+<p>Immediately triggers a side-effecting function, when a primitive property changes.</p>
 
-<div class="highlight highlight-js"><pre>Ember.<span class="pl-c1">Object</span>.extend({
-  valueObserver<span class="pl-k">:</span> Ember.observer(<span class="pl-s"><span class="pl-pds">'</span>value<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
-    <span class="pl-c">// Executes whenever the "value" property changes</span>
+<div class="highlight highlight-source-js"><pre>Ember.<span class="pl-c1">Object</span>.extend({
+  onIsFormValidChanged<span class="pl-k">:</span> Ember.observer(<span class="pl-s"><span class="pl-pds">'</span>isFormValid<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+    <span class="pl-c">// Executes whenever the "isFormValid" property changes</span>
+    <span class="pl-k">if</span> (<span class="pl-k">!</span><span class="pl-v">this</span>.get(<span class="pl-s"><span class="pl-pds">'</span>isFormValid<span class="pl-pds">'</span></span>)) {
+      <span class="pl-c1">document</span>.<span class="pl-c1">getElementById</span>(<span class="pl-s"><span class="pl-pds">'</span>form-errors<span class="pl-pds">'</span></span>).scrollIntoView();
+    }
   })
 });</pre></div>
 
 <h3>
 <a id="computed-property" class="anchor" href="#computed-property" aria-hidden="true"><span class="octicon octicon-link"></span></a>Computed Property</h3>
 
-<p>Property that recalculates whenever other properties change.</p>
+<p>Property that lazily recalculates whenever other properties change.</p>
 
-<div class="highlight highlight-js"><pre>Ember.Component.extend({
+<div class="highlight highlight-source-js"><pre>Ember.Component.extend({
   firstName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Kyle<span class="pl-pds">"</span></span>,
   lastName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Coberly<span class="pl-pds">"</span></span>,
   fullName<span class="pl-k">:</span> Ember.computed(<span class="pl-s"><span class="pl-pds">"</span>firstName<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>lastName<span class="pl-pds">"</span></span>, <span class="pl-k">function</span>(){
@@ -215,7 +218,7 @@
 
 <p>Defines properties and relationships for a type of data</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> <span class="pl-c1">DS</span>.Model.extend({
+<div class="highlight highlight-source-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> <span class="pl-c1">DS</span>.Model.extend({
   firstName<span class="pl-k">:</span> <span class="pl-c1">DS</span>.attr(),
   lastName<span class="pl-k">:</span> <span class="pl-c1">DS</span>.attr(),
   fullName<span class="pl-k">:</span> Ember.computed(<span class="pl-s"><span class="pl-pds">'</span>firstName<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>lastName<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
@@ -228,7 +231,7 @@
 
 <p>Translates your application's data request into a server request</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> <span class="pl-c1">DS</span>.RESTAdapter.extend({
+<div class="highlight highlight-source-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> <span class="pl-c1">DS</span>.RESTAdapter.extend({
   host<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>www.kylecoberly.com<span class="pl-pds">"</span></span>,
   namespace<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>api<span class="pl-pds">"</span></span>,
   headers<span class="pl-k">:</span> {
@@ -242,7 +245,7 @@
 
 <p>Formats your data payload to and from the server</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> <span class="pl-c1">DS</span>.JSONSerializer.extend({
+<div class="highlight highlight-source-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> <span class="pl-c1">DS</span>.JSONSerializer.extend({
   primaryKey<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>_id<span class="pl-pds">'</span></span>
 });</pre></div>
 
@@ -251,7 +254,7 @@
 
 <p>Fake server endpoint that can return mock data</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-k">var</span> data <span class="pl-k">=</span> {
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> data <span class="pl-k">=</span> {
   author<span class="pl-k">:</span> {
     firstName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Kyle<span class="pl-pds">"</span></span>,
     lastName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Coberly<span class="pl-pds">"</span></span>
@@ -272,7 +275,7 @@
 
 <p>Mock data that's attached to a model. Deprecated.</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-k">var</span> Author <span class="pl-k">=</span> <span class="pl-c1">DS</span>.Model.extend({
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> Author <span class="pl-k">=</span> <span class="pl-c1">DS</span>.Model.extend({
   firstName<span class="pl-k">:</span> <span class="pl-c1">DS</span>.attr(<span class="pl-s"><span class="pl-pds">'</span>string<span class="pl-pds">'</span></span>),
   lastName<span class="pl-k">:</span> <span class="pl-c1">DS</span>.attr(<span class="pl-s"><span class="pl-pds">'</span>string<span class="pl-pds">'</span></span>)
 });
@@ -291,7 +294,7 @@ Author.reopenClass({
 
 <p>A data type on a model that you can coerce to or from</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-c">// Transport in C, app uses F</span>
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// Transport in C, app uses F</span>
 <span class="pl-k">export</span> <span class="pl-k">default</span> <span class="pl-c1">DS</span>.Transform.extend({
   <span class="pl-en">deserialize</span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">serialized</span>) {
     <span class="pl-k">return</span> (serialized <span class="pl-k">*</span>  <span class="pl-c1">1.8</span>) <span class="pl-k">+</span> <span class="pl-c1">32</span>;
@@ -306,7 +309,7 @@ Author.reopenClass({
 
 <p>A specific instance of a model</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-k">var</span> tyrion <span class="pl-k">=</span> <span class="pl-v">this</span>.store.findRecord(<span class="pl-s"><span class="pl-pds">'</span>person<span class="pl-pds">'</span></span>, <span class="pl-c1">1</span>);
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> tyrion <span class="pl-k">=</span> <span class="pl-v">this</span>.store.findRecord(<span class="pl-s"><span class="pl-pds">'</span>person<span class="pl-pds">'</span></span>, <span class="pl-c1">1</span>);
 <span class="pl-c">// ...after the record has loaded</span>
 tyrion.set(<span class="pl-s"><span class="pl-pds">'</span>firstName<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Yollo<span class="pl-pds">"</span></span>);</pre></div>
 
@@ -315,14 +318,14 @@ tyrion.set(<span class="pl-s"><span class="pl-pds">'</span>firstName<span class=
 
 <p>Collection of all the records in the application</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-k">var</span> post <span class="pl-k">=</span> <span class="pl-v">this</span>.store.findRecord(<span class="pl-s"><span class="pl-pds">'</span>post<span class="pl-pds">'</span></span>, <span class="pl-c1">1</span>);</pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> post <span class="pl-k">=</span> <span class="pl-v">this</span>.store.findRecord(<span class="pl-s"><span class="pl-pds">'</span>post<span class="pl-pds">'</span></span>, <span class="pl-c1">1</span>);</pre></div>
 
 <h3>
 <a id="snapshot" class="anchor" href="#snapshot" aria-hidden="true"><span class="octicon octicon-link"></span></a>Snapshot</h3>
 
 <p>The state of a record at a particular point in time. Used internally in Ember Data.</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-c">// store.push('post', { id: 1, author: 'Tomster', title: 'Ember.js rocks' });</span>
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// store.push('post', { id: 1, author: 'Tomster', title: 'Ember.js rocks' });</span>
 postSnapshot.attr(<span class="pl-s"><span class="pl-pds">'</span>author<span class="pl-pds">'</span></span>); <span class="pl-c">// =&gt; 'Tomster'</span>
 postSnapshot.attr(<span class="pl-s"><span class="pl-pds">'</span>title<span class="pl-pds">'</span></span>); <span class="pl-c">// =&gt; 'Ember.js rocks'</span></pre></div>
 
@@ -334,9 +337,10 @@ postSnapshot.attr(<span class="pl-s"><span class="pl-pds">'</span>title<span cla
 <h3>
 <a id="module" class="anchor" href="#module" aria-hidden="true"><span class="octicon octicon-link"></span></a>Module</h3>
 
-<p>An encapsulated Ember object</p>
+<p>1 or more encapsulated classes, constants, functions, or objects. Can publicly export some
+or all. In an Ember project, typically exports 1 Ember class.</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-c">// app/routes/index.js</span>
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// app/routes/index.js</span>
 <span class="pl-k">import</span> Ember <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">"</span>ember<span class="pl-pds">"</span></span>;
 
 <span class="pl-k">export</span> <span class="pl-k">default</span> Ember.Route.extend({
@@ -355,18 +359,18 @@ postSnapshot.attr(<span class="pl-s"><span class="pl-pds">'</span>title<span cla
 
 <p>Custom HTMLBars function</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.Helper.<span class="pl-c1">join</span>(<span class="pl-k">function</span>(<span class="pl-smi">params</span>, <span class="pl-smi">hash</span>) {
+<div class="highlight highlight-source-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.Helper.<span class="pl-c1">join</span>(<span class="pl-k">function</span>(<span class="pl-smi">params</span>, <span class="pl-smi">hash</span>) {
   <span class="pl-k">return</span> params.<span class="pl-c1">join</span>(<span class="pl-s"><span class="pl-pds">'</span> <span class="pl-pds">'</span></span>);
 });</pre></div>
 
-<div class="highlight highlight-handlebars"><pre><span class="pl-c1">{{</span><span class="pl-v">join</span> firstName lastName<span class="pl-c1">}}</span></pre></div>
+<div class="highlight highlight-text-html-handlebars"><pre><span class="pl-c1">{{</span><span class="pl-v">join</span> firstName lastName<span class="pl-c1">}}</span></pre></div>
 
 <h3>
 <a id="initializer" class="anchor" href="#initializer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Initializer</h3>
 
-<p>Function that runs when the application starts</p>
+<p>Function that runs when the application starts, before the first route is entered.</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-c">// app/initializers/observation.js</span>
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// app/initializers/observation.js</span>
 <span class="pl-k">export</span> <span class="pl-k">default</span> {
   name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>observation<span class="pl-pds">'</span></span>,
   <span class="pl-en">initialize</span><span class="pl-k">:</span> <span class="pl-k">function</span>() {
@@ -379,7 +383,7 @@ postSnapshot.attr(<span class="pl-s"><span class="pl-pds">'</span>title<span cla
 
 <p>Container for generic functions and values that can be imported into other objects</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.<span class="pl-c1">Object</span>.extend({
+<div class="highlight highlight-source-js"><pre><span class="pl-k">export</span> <span class="pl-k">default</span> Ember.<span class="pl-c1">Object</span>.extend({
   <span class="pl-en">getRandomNumber</span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">min</span>, <span class="pl-smi">max</span>){
     <span class="pl-k">return</span> <span class="pl-c1">Math</span>.<span class="pl-c1">floor</span>(<span class="pl-c1">Math</span>.<span class="pl-c1">random</span>() <span class="pl-k">*</span> (max <span class="pl-k">-</span> min)) <span class="pl-k">+</span> min;
   }
@@ -413,7 +417,7 @@ postSnapshot.attr(<span class="pl-s"><span class="pl-pds">'</span>title<span cla
 <h3>
 <a id="integration-test" class="anchor" href="#integration-test" aria-hidden="true"><span class="octicon octicon-link"></span></a>Integration Test</h3>
 
-<p>Tests application logic. Requires the application to be running.</p>
+<p>Tests component logic. Doesn't need the application, but needs the DOM.</p>
 
 <h3>
 <a id="acceptance-test" class="anchor" href="#acceptance-test" aria-hidden="true"><span class="octicon octicon-link"></span></a>Acceptance Test</h3>
